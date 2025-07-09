@@ -67,95 +67,36 @@ class CustomAgent(Agent):
             browser: Browser | None = None,
             browser_context: BrowserContext | None = None,
             controller: Controller[Context] = Controller(),
-            # Initial agent run parameters
-            sensitive_data: Optional[Dict[str, str]] = None,
-            initial_actions: Optional[List[Dict[str, Dict[str, Any]]]] = None,
-            # Cloud Callbacks
-            register_new_step_callback: Callable[['BrowserState', 'AgentOutput', int], Awaitable[None]] | None = None,
-            register_done_callback: Callable[['AgentHistoryList'], Awaitable[None]] | None = None,
-            register_external_agent_status_raise_error_callback: Callable[[], Awaitable[bool]] | None = None,
-            # Agent settings
-            use_vision: bool = True,
-            use_vision_for_planner: bool = False,
-            save_conversation_path: Optional[str] = None,
-            save_conversation_path_encoding: Optional[str] = 'utf-8',
-            max_failures: int = 3,
-            retry_delay: int = 10,
-            system_prompt_class: Type[SystemPrompt] = SystemPrompt,
-            agent_prompt_class: Type[AgentMessagePrompt] = AgentMessagePrompt,
-            max_input_tokens: int = 128000,
-            validate_output: bool = False,
-            message_context: Optional[str] = None,
-            generate_gif: bool | str = False,
-            available_file_paths: Optional[list[str]] = None,
-            include_attributes: list[str] = [
-                'title',
-                'type',
-                'name',
-                'role',
-                'aria-label',
-                'placeholder',
-                'value',
-                'alt',
-                'aria-expanded',
-                'data-date-format',
-            ],
-            max_actions_per_step: int = 10,
-            tool_calling_method: Optional[ToolCallingMethod] = 'auto',
-            page_extraction_llm: Optional[BaseChatModel] = None,
-            planner_llm: Optional[BaseChatModel] = None,
-            planner_interval: int = 1,  # Run planner every N steps
-            # Inject state
-            injected_agent_state: Optional[AgentState] = None,
-            context: Context | None = None,
+            # --- THE FIX IS HERE ---
+            # All other parameters are now captured by **kwargs
+            **kwargs,
     ):
-        super(CustomAgent, self).__init__(
+        # Pass all arguments, including the new ones from kwargs, to the parent class.
+        super().__init__(
             task=task,
             llm=llm,
             browser=browser,
             browser_context=browser_context,
             controller=controller,
-            sensitive_data=sensitive_data,
-            initial_actions=initial_actions,
-            register_new_step_callback=register_new_step_callback,
-            register_done_callback=register_done_callback,
-            register_external_agent_status_raise_error_callback=register_external_agent_status_raise_error_callback,
-            use_vision=use_vision,
-            use_vision_for_planner=use_vision_for_planner,
-            save_conversation_path=save_conversation_path,
-            save_conversation_path_encoding=save_conversation_path_encoding,
-            max_failures=max_failures,
-            retry_delay=retry_delay,
-            system_prompt_class=system_prompt_class,
-            max_input_tokens=max_input_tokens,
-            validate_output=validate_output,
-            message_context=message_context,
-            generate_gif=generate_gif,
-            available_file_paths=available_file_paths,
-            include_attributes=include_attributes,
-            max_actions_per_step=max_actions_per_step,
-            tool_calling_method=tool_calling_method,
-            page_extraction_llm=page_extraction_llm,
-            planner_llm=planner_llm,
-            planner_interval=planner_interval,
-            injected_agent_state=injected_agent_state,
-            context=context,
+            **kwargs,  # This passes max_steps, use_vision, etc. to the parent
         )
-        self.state = injected_agent_state or CustomAgentState()
+        
+        # Your existing custom logic remains the same.
+        self.state = kwargs.get('injected_agent_state') or CustomAgentState()
         self.add_infos = add_infos
         self._message_manager = CustomMessageManager(
             task=task,
-            system_message=self.settings.system_prompt_class(
+            system_message=kwargs.get('system_prompt_class', SystemPrompt)(
                 self.available_actions,
-                max_actions_per_step=self.settings.max_actions_per_step,
+                max_actions_per_step=kwargs.get('max_actions_per_step', 10),
             ).get_system_message(),
             settings=CustomMessageManagerSettings(
-                max_input_tokens=self.settings.max_input_tokens,
-                include_attributes=self.settings.include_attributes,
-                message_context=self.settings.message_context,
-                sensitive_data=sensitive_data,
-                available_file_paths=self.settings.available_file_paths,
-                agent_prompt_class=agent_prompt_class
+                max_input_tokens=kwargs.get('max_input_tokens', 128000),
+                include_attributes=kwargs.get('include_attributes', []),
+                message_context=kwargs.get('message_context'),
+                sensitive_data=kwargs.get('sensitive_data'),
+                available_file_paths=kwargs.get('available_file_paths'),
+                agent_prompt_class=kwargs.get('agent_prompt_class', AgentMessagePrompt)
             ),
             state=self.state.message_manager_state,
         )

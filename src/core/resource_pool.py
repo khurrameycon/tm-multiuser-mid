@@ -371,7 +371,7 @@ class ResourcePool:
         
         try:
             from src.browser.custom_browser import CustomBrowser
-            from browser_use.browser.browser import BrowserConfig
+            from src.browser.browser_config import BrowserConfig
             
             # Default browser configuration
             default_config = {
@@ -384,7 +384,7 @@ class ResourcePool:
             if browser_config:
                 default_config.update(browser_config)
             
-            # Create browser
+            # Create browser with all required arguments
             extra_args = [f"--window-size={default_config['window_width']},{default_config['window_height']}"]
             
             browser = CustomBrowser(

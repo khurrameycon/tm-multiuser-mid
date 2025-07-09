@@ -104,8 +104,10 @@ class SessionManagerConfig:
 
 
 @dataclass
+# In src/config/settings.py
+
 class ResourcePoolConfig:
-    """Resource pool configuration"""
+    """Configuration for the resource pool."""
     max_browser_instances: int = 50
     min_browser_instances: int = 5
     browser_idle_timeout_minutes: int = 10
@@ -113,18 +115,31 @@ class ResourcePoolConfig:
     enable_resource_pooling: bool = True
     enable_memory_monitoring: bool = True
     enable_automatic_scaling: bool = True
+    
+    # --- FIX: Add all missing fields below ---
+    browser_max_age_hours: int = 4
+    max_contexts_per_browser: int = 10
+    context_idle_timeout_minutes: int = 5
+    max_memory_per_browser_mb: int = 200
     cleanup_interval_seconds: int = 30
+    health_check_interval_seconds: int = 60
 
 
 @dataclass
+# In src/config/settings.py
+
 class WebSocketConfig:
-    """WebSocket configuration"""
+    """Configuration for WebSocket connections."""
     max_connections: int = 1000
     max_connections_per_ip: int = 5
     ping_interval_seconds: int = 30
     rate_limit_messages_per_minute: int = 100
+
+    # --- FIX: Add all missing fields below ---
+    connection_timeout_seconds: int = 60
+    max_message_size: int = 1048576  # 1 MB
     enable_compression: bool = True
-    max_message_size_kb: int = 1024
+    heartbeat_timeout_seconds: int = 90
 
 
 @dataclass
@@ -240,7 +255,7 @@ class Settings(BaseSettings):
     enable_automatic_scaling: bool = True
     max_websocket_connections: int = 100
     max_websocket_connections_per_ip: int = 5
-    
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

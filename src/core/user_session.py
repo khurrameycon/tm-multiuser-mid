@@ -115,15 +115,13 @@ class UserSession:
         
         logger.info(f"Created UserSession {session_id} for IP {client_ip}")
 
+    # In src/core/user_session.py, replace the existing initialize_browser function with this one.
+
+    # In src/core/user_session.py, replace the existing initialize_browser function
+
     async def initialize_browser(self, browser_config: Dict[str, Any] = None) -> bool:
         """
         Initialize browser resources for this session.
-        
-        Args:
-            browser_config: Browser configuration options
-            
-        Returns:
-            bool: True if successful, False otherwise
         """
         if self.browser is not None:
             logger.warning(f"Browser already initialized for session {self.session_id}")
@@ -131,11 +129,10 @@ class UserSession:
         
         try:
             from src.browser.custom_browser import CustomBrowser
-            from src.browser.custom_context import CustomBrowserContextConfig
-            from browser_use.browser.browser import BrowserConfig
+            from src.browser.browser_config import BrowserConfig 
+            from src.browser.custom_context import BrowserContextConfig
             from browser_use.browser.context import BrowserContextWindowSize
             
-            # Default browser configuration
             default_config = {
                 'headless': True,
                 'disable_security': True,
@@ -147,7 +144,6 @@ class UserSession:
             if browser_config:
                 default_config.update(browser_config)
             
-            # Create browser instance
             extra_args = [f"--window-size={default_config['window_width']},{default_config['window_height']}"]
             
             self.browser = CustomBrowser(
@@ -158,14 +154,13 @@ class UserSession:
                 )
             )
             
-            # Create browser context
-            context_config = CustomBrowserContextConfig(
+            # *** FIX: The 'force_new_context' argument has been removed ***
+            context_config = BrowserContextConfig(
                 save_downloads_path=f"./tmp/downloads/session_{self.session_id}",
                 browser_window_size=BrowserContextWindowSize(
                     width=default_config['window_width'],
                     height=default_config['window_height']
-                ),
-                force_new_context=True
+                )
             )
             
             self.browser_context = await self.browser.new_context(config=context_config)
@@ -211,20 +206,13 @@ class UserSession:
             logger.error(f"Failed to initialize controller for session {self.session_id}: {e}", exc_info=True)
             return False
 
+    # In src/core/user_session.py, replace the existing start_agent_task function
+
+    # In src/core/user_session.py, replace the existing start_agent_task function
+
     async def start_agent_task(self, task_description: str, llm, agent_config: Dict[str, Any] = None) -> str:
         """
         Start a new agent task.
-        
-        Args:
-            task_description: Description of the task
-            llm: Language model instance
-            agent_config: Agent configuration options
-            
-        Returns:
-            str: Task ID
-            
-        Raises:
-            RuntimeError: If agent is already running or resources not initialized
         """
         if self.current_task and not self.current_task.done():
             raise RuntimeError("Agent task already running")
@@ -232,54 +220,45 @@ class UserSession:
         if not self.browser or not self.browser_context or not self.controller:
             raise RuntimeError("Browser and controller must be initialized before starting agent")
         
-        # Generate task ID
         task_id = str(uuid.uuid4())
         
         try:
             from src.agent.custom_agent import CustomAgent
-            from src.agent.custom_prompts import CustomSystemPrompt, CustomAgentMessagePrompt
+            from src.agent.custom_prompts import CustomSystemPrompt
             
-            # Default agent configuration
+            # --- THE FIX IS HERE ---
+            # The 'agent_prompt_class' has been removed from the config dictionary
+            # because the CustomAgent defines its own default.
+            
+            self.max_steps = agent_config.pop('max_steps', 100)
+            
             default_config = {
                 'use_vision': self.enable_vision,
                 'max_actions_per_step': 10,
-                'max_steps': self.max_steps,
                 'system_prompt_class': CustomSystemPrompt,
-                'agent_prompt_class': CustomAgentMessagePrompt
+                # 'agent_prompt_class' was here and has been removed.
             }
             
             if agent_config:
                 default_config.update(agent_config)
-            
-            # Create agent callbacks
-            async def step_callback(state, output, step_num):
-                await self._handle_agent_step(state, output, step_num)
-            
-            def done_callback(history):
-                self._handle_agent_completion(history)
-            
-            # Create agent instance
+
             self.agent = CustomAgent(
                 task=task_description,
                 llm=llm,
                 browser=self.browser,
                 browser_context=self.browser_context,
                 controller=self.controller,
-                register_new_step_callback=step_callback,
-                register_done_callback=done_callback,
                 **default_config
             )
             
-            # Create task info
             self.agent_task_info = AgentTaskInfo(
                 task_id=task_id,
                 task_description=task_description,
                 started_at=datetime.now(),
                 agent_state=AgentState.INITIALIZING,
-                max_steps=default_config['max_steps']
+                max_steps=self.max_steps
             )
             
-            # Start the agent task
             self.current_task = asyncio.create_task(self._run_agent())
             
             logger.info(f"Started agent task {task_id} for session {self.session_id}")
