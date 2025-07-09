@@ -1,0 +1,939 @@
+2025-07-08 16:49:40,647 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:49:48,099 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:50:38,927 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:50:53,197 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:50:59,494 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:52:48,986 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:52:57,447 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:53:44,365 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:53:54,870 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:54:33,383 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:54:33,399 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:54:33,399 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:54:33,671 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:54:33,710 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:54:43,125 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:54:43,134 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:54:43,134 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:54:43,169 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:54:43,202 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:55:35,325 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:55:35,358 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:55:35,358 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:55:35,382 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:55:35,417 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:56:24,559 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:56:24,590 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:56:24,590 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:56:24,590 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:56:24,592 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:56:24,592 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'session_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'session_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 92, in lifespan
+    session_timeout_minutes=settings.session_timeout_minutes,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'session_timeout_minutes'
+2025-07-08 16:56:24,619 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:56:28,914 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:56:28,930 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:56:28,930 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:56:28,930 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:56:28,931 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:56:28,931 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'session_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'session_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 92, in lifespan
+    session_timeout_minutes=settings.session_timeout_minutes,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'session_timeout_minutes'
+2025-07-08 16:56:28,962 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:56:37,527 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:56:37,543 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:56:37,543 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:56:37,543 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:56:37,544 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:56:37,544 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'session_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'session_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 92, in lifespan
+    session_timeout_minutes=settings.session_timeout_minutes,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'session_timeout_minutes'
+2025-07-08 16:56:37,577 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:57:12,414 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:57:12,434 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:57:12,434 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:57:12,436 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:57:12,436 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:57:12,436 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_sessions_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_sessions_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 93, in lifespan
+    max_sessions_per_ip=settings.max_sessions_per_ip,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_sessions_per_ip'
+2025-07-08 16:57:12,455 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:57:26,549 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:57:26,565 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:57:26,565 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:57:26,568 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:57:26,569 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:57:26,570 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_sessions_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_sessions_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 93, in lifespan
+    max_sessions_per_ip=settings.max_sessions_per_ip,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_sessions_per_ip'
+2025-07-08 16:57:26,596 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:58:03,490 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:58:03,507 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:58:03,507 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:58:03,509 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:58:03,509 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:58:03,509 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'cleanup_interval_seconds'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'cleanup_interval_seconds'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 94, in lifespan
+    cleanup_interval_seconds=settings.cleanup_interval_seconds
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'cleanup_interval_seconds'
+2025-07-08 16:58:03,551 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:58:11,785 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:58:11,822 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:58:11,822 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:58:11,822 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:58:11,822 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:58:11,822 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'cleanup_interval_seconds'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'cleanup_interval_seconds'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 94, in lifespan
+    cleanup_interval_seconds=settings.cleanup_interval_seconds
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'cleanup_interval_seconds'
+2025-07-08 16:58:11,855 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:58:41,377 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:58:41,392 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:58:41,393 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:58:41,394 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:58:41,395 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:58:41,395 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 16:58:41,396 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 16:58:41,396 - main - INFO - ✅ Session Manager initialized
+2025-07-08 16:58:41,397 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_browser_instances'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_browser_instances'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 101, in lifespan
+    max_browser_instances=settings.max_browser_instances,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_browser_instances'
+2025-07-08 16:58:41,422 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:58:41,422 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 16:58:41,422 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 16:58:47,276 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:58:47,294 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:58:47,294 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:58:47,296 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:58:47,299 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:58:47,299 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 16:58:47,299 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 16:58:47,299 - main - INFO - ✅ Session Manager initialized
+2025-07-08 16:58:47,299 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_browser_instances'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_browser_instances'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 101, in lifespan
+    max_browser_instances=settings.max_browser_instances,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_browser_instances'
+2025-07-08 16:58:47,327 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:58:47,327 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 16:58:47,329 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 16:59:27,831 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:59:27,858 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:59:27,858 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:59:27,858 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:59:27,869 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:59:27,869 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 16:59:27,869 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 16:59:27,869 - main - INFO - ✅ Session Manager initialized
+2025-07-08 16:59:27,869 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'min_browser_instances'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'min_browser_instances'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 102, in lifespan
+    min_browser_instances=settings.min_browser_instances,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'min_browser_instances'. Did you mean: 'max_browser_instances'?
+2025-07-08 16:59:27,896 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:59:27,896 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 16:59:27,898 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 16:59:35,112 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 16:59:35,147 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 16:59:35,147 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 16:59:35,147 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 16:59:35,147 - main - INFO - Initializing core infrastructure...
+2025-07-08 16:59:35,147 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 16:59:35,147 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 16:59:35,157 - main - INFO - ✅ Session Manager initialized
+2025-07-08 16:59:35,157 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'min_browser_instances'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'min_browser_instances'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 102, in lifespan
+    min_browser_instances=settings.min_browser_instances,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'min_browser_instances'. Did you mean: 'max_browser_instances'?
+2025-07-08 16:59:35,182 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 16:59:35,183 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 16:59:35,183 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:00:10,191 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:00:10,208 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:00:10,209 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:00:10,211 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:00:10,212 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:00:10,212 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:00:10,213 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:00:10,213 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:00:10,213 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'browser_idle_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'browser_idle_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 103, in lifespan
+    browser_idle_timeout_minutes=settings.browser_idle_timeout_minutes,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'browser_idle_timeout_minutes'. Did you mean: 'session_timeout_minutes'?
+2025-07-08 17:00:10,247 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:00:10,248 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:00:10,249 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:00:19,738 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:00:19,767 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:00:19,767 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:00:19,767 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:00:19,778 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:00:19,779 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:00:19,779 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:00:19,779 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:00:19,779 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'browser_idle_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'browser_idle_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 103, in lifespan
+    browser_idle_timeout_minutes=settings.browser_idle_timeout_minutes,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'browser_idle_timeout_minutes'. Did you mean: 'session_timeout_minutes'?
+2025-07-08 17:00:19,806 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:00:19,806 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:00:19,807 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:00:57,088 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:00:57,109 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:00:57,110 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:00:57,110 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:00:57,112 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:00:57,112 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:00:57,113 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:00:57,113 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:00:57,113 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'browser_idle_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'browser_idle_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 103, in lifespan
+    browser_idle_timeout_minutes=settings.browser_idle_timeout_minutes,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'browser_idle_timeout_minutes'. Did you mean: 'rowser_idle_timeout_minutes'?
+2025-07-08 17:00:57,134 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:00:57,134 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:00:57,135 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:01:23,283 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:01:23,300 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:01:23,300 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:01:23,300 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:01:23,300 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:01:23,300 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:01:23,300 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:01:23,300 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:01:23,300 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'browser_idle_timeout_minutes'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'browser_idle_timeout_minutes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 103, in lifespan
+    browser_idle_timeout_minutes=settings.browser_idle_timeout_minutes,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'browser_idle_timeout_minutes'. Did you mean: 'rowser_idle_timeout_minutes'?
+2025-07-08 17:01:23,328 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:01:23,328 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:01:23,329 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:02:31,749 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:02:31,769 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:02:31,770 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:02:31,770 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:02:31,772 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:02:31,772 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:02:31,773 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:02:31,773 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:02:31,773 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_memory_usage_mb'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_memory_usage_mb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 104, in lifespan
+    max_memory_usage_mb=settings.max_memory_usage_mb,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_memory_usage_mb'
+2025-07-08 17:02:31,797 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:02:31,797 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:02:31,800 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:02:42,572 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:02:42,593 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:02:42,593 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:02:42,594 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:02:42,595 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:02:42,595 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:02:42,595 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:02:42,595 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:02:42,595 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_memory_usage_mb'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_memory_usage_mb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 104, in lifespan
+    max_memory_usage_mb=settings.max_memory_usage_mb,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_memory_usage_mb'
+2025-07-08 17:02:42,622 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:02:42,622 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:02:42,623 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:03:16,715 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:03:16,732 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:03:16,732 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:03:16,732 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:03:16,733 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:03:16,734 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:03:16,735 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:03:16,735 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:03:16,735 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_resource_pooling'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_resource_pooling'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 105, in lifespan
+    enable_resource_pooling=settings.enable_resource_pooling,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_resource_pooling'
+2025-07-08 17:03:16,770 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:03:16,770 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:03:16,772 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:03:24,177 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:03:24,194 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:03:24,194 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:03:24,207 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:03:24,209 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:03:24,209 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:03:24,209 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:03:24,211 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:03:24,211 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_resource_pooling'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_resource_pooling'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 105, in lifespan
+    enable_resource_pooling=settings.enable_resource_pooling,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_resource_pooling'
+2025-07-08 17:03:24,241 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:03:24,241 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:03:24,242 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:04:15,578 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:04:15,614 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:04:15,614 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:04:15,614 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:04:15,616 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:04:15,616 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:04:15,616 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:04:15,616 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:04:15,616 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_memory_monitoring'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_memory_monitoring'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 106, in lifespan
+    enable_memory_monitoring=settings.enable_memory_monitoring,
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_memory_monitoring'
+2025-07-08 17:04:15,649 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:04:15,649 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:04:15,650 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:04:42,167 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:04:42,188 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:04:42,188 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:04:42,190 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:04:42,192 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:04:42,192 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:04:42,192 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:04:42,192 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:04:42,193 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_memory_monitoring'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_memory_monitoring'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 106, in lifespan
+    enable_memory_monitoring=settings.enable_memory_monitoring,
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_memory_monitoring'
+2025-07-08 17:04:42,218 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:04:42,218 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:04:42,219 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:05:27,631 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:05:27,647 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:05:27,647 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:05:27,647 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:05:27,649 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:05:27,650 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:05:27,651 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:05:27,651 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:05:27,651 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_automatic_scaling'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_automatic_scaling'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 107, in lifespan
+    enable_automatic_scaling=settings.enable_automatic_scaling
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_automatic_scaling'
+2025-07-08 17:05:27,678 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:05:27,678 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:05:27,684 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:05:35,408 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:05:35,424 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:05:35,425 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:05:35,427 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:05:35,428 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:05:35,429 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:05:35,429 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:05:35,430 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:05:35,430 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'enable_automatic_scaling'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'enable_automatic_scaling'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 107, in lifespan
+    enable_automatic_scaling=settings.enable_automatic_scaling
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'enable_automatic_scaling'
+2025-07-08 17:05:35,453 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:05:35,453 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:05:35,455 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:06:18,525 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:06:18,547 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:06:18,547 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:06:18,547 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:06:18,554 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:06:18,554 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:06:18,555 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:06:18,556 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:06:18,556 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:06:18,556 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:06:18,556 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:06:18,556 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:06:18,556 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:06:18,556 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:06:18,556 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:06:18,559 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:06:19,766 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976378559133: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:06:19,768 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976379768920: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:06:19,769 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:06:19,769 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:06:19,770 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 114, in lifespan
+    max_connections=settings.max_websocket_connections,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections'
+2025-07-08 17:06:19,790 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:06:26,262 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:06:26,285 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:06:26,285 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:06:26,288 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:06:26,290 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:06:26,290 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:06:26,290 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:06:26,290 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:06:26,290 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:06:26,292 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:06:26,292 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:06:26,292 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:06:26,293 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:06:26,293 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:06:26,294 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:06:26,294 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:06:26,389 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976386294772: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:06:26,389 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976386389030: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:06:26,389 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:06:26,389 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:06:26,389 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 114, in lifespan
+    max_connections=settings.max_websocket_connections,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections'
+2025-07-08 17:06:26,411 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:08:40,704 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:08:40,734 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:08:40,734 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:08:40,734 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:08:40,734 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:08:40,748 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:08:40,749 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:08:40,749 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:08:40,749 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:08:40,749 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:08:40,749 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:08:40,749 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:08:40,749 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:08:40,749 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:08:40,749 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:08:40,753 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:08:40,864 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976520753084: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:08:40,865 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976520865451: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:08:40,865 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:08:40,865 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:08:40,866 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 115, in lifespan
+    max_connections_per_ip=settings.max_websocket_connections_per_ip,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections_per_ip'. Did you mean: 'max_websocket_connections'?
+2025-07-08 17:08:40,879 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:09:44,708 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:09:44,714 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:09:44,714 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:09:44,714 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:09:44,726 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:09:44,727 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:09:44,727 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:09:44,727 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:09:44,728 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:09:44,728 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:09:44,729 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:09:44,729 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:09:44,729 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:09:44,730 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:09:44,731 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:09:44,731 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:09:44,853 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976584731931: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:09:44,854 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976584854696: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:09:44,854 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:09:44,854 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:09:44,855 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 115, in lifespan
+    max_connections_per_ip=settings.max_websocket_connections_per_ip,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections_per_ip'. Did you mean: 'max_websocket_connections'?
+2025-07-08 17:09:44,866 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:10:02,793 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:10:02,830 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:10:02,830 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:10:02,830 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:10:02,830 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:10:02,830 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:10:02,830 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:10:02,838 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:10:02,838 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:10:02,839 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:10:02,839 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:10:02,840 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:10:02,840 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:10:02,840 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:10:02,841 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:10:02,841 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:10:02,940 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976602841274: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:10:02,941 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976602941396: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:10:02,941 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:10:02,942 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:10:02,942 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 115, in lifespan
+    max_connections_per_ip=settings.max_websocket_connections_per_ip,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections_per_ip'. Did you mean: 'max_websocket_connections'?
+2025-07-08 17:10:02,960 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:10:21,302 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:10:21,318 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:10:21,318 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:10:21,318 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:10:21,319 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:10:21,319 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:10:21,320 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:10:21,320 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:10:21,320 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:10:21,320 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:10:21,321 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:10:21,321 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:10:21,321 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:10:21,322 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:10:21,323 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:10:21,323 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:10:21,422 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976621324098: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:10:21,423 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976621423368: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:10:21,423 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:10:21,423 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:10:21,423 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'max_websocket_connections_per_ip'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'max_websocket_connections_per_ip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 115, in lifespan
+    max_connections_per_ip=settings.max_websocket_connections_per_ip,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'max_websocket_connections_per_ip'. Did you mean: 'max_websocket_connections'?
+2025-07-08 17:10:21,443 - src.core.session_manager - INFO - Session cleanup loop stopped
+2025-07-08 17:14:43,138 - src.config.settings - WARNING - Browser instance limit may exceed memory limit
+2025-07-08 17:14:43,155 - src.api.middleware.rate_limiting - INFO - RateLimiter initialized
+2025-07-08 17:14:43,155 - src.api.middleware.rate_limiting - INFO - Configured IP rate limit: 100 req/min, burst: 20
+2025-07-08 17:14:43,155 - main - INFO - 🚀 Starting Multi-User Browser Automation Application
+2025-07-08 17:14:43,157 - main - INFO - Initializing core infrastructure...
+2025-07-08 17:14:43,157 - src.core.session_manager - INFO - SessionManager initialized with config: SessionConfig(max_sessions=10, session_timeout_minutes=60, cleanup_interval_seconds=300, max_sessions_per_ip=2, enable_session_persistence=False)
+2025-07-08 17:14:43,158 - src.core.session_manager - INFO - SessionManager started with cleanup loop
+2025-07-08 17:14:43,158 - main - INFO - ✅ Session Manager initialized
+2025-07-08 17:14:43,158 - src.core.resource_pool - INFO - ResourcePool initialized with config: ResourceConfig(max_browser_instances=5, min_browser_instances=1, browser_idle_timeout_minutes=30, browser_max_age_hours=4, max_contexts_per_browser=10, context_idle_timeout_minutes=5, max_memory_usage_mb=4096, max_memory_per_browser_mb=200, cleanup_interval_seconds=30, health_check_interval_seconds=60, enable_resource_pooling=True, enable_memory_monitoring=True, enable_automatic_scaling=True)
+2025-07-08 17:14:43,159 - src.core.resource_pool - INFO - Pre-warming pool with 1 browser instances
+2025-07-08 17:14:43,159 - src.api.middleware.rate_limiting - INFO - RateLimiter started
+2025-07-08 17:14:43,160 - src.core.session_manager - INFO - Starting session cleanup loop
+2025-07-08 17:14:43,160 - src.core.resource_pool - INFO - Starting resource cleanup loop
+2025-07-08 17:14:43,161 - src.core.resource_pool - INFO - Starting resource health check loop
+2025-07-08 17:14:43,161 - src.core.resource_pool - INFO - Starting resource scaling loop
+2025-07-08 17:14:43,162 - src.core.resource_pool - INFO - Scaling up: Creating additional browser instances
+2025-07-08 17:14:43,271 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976883162036: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:14:43,272 - src.core.resource_pool - ERROR - Failed to create browser browser_1751976883272559: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\src\core\resource_pool.py", line 391, in _create_browser
+    config=BrowserConfig(
+           ^^^^^^^^^^^^^^
+TypeError: BrowserConfig.__init__() got an unexpected keyword argument 'extra_browser_args'
+2025-07-08 17:14:43,273 - src.core.resource_pool - INFO - ResourcePool started with background tasks
+2025-07-08 17:14:43,273 - main - INFO - ✅ Resource Pool initialized
+2025-07-08 17:14:43,273 - main - ERROR - 💥 Failed to start application: 'Settings' object has no attribute 'websocket_ping_interval'
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'websocket_ping_interval'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\SLKhurram-Coding\GemWebUi-API\main.py", line 116, in lifespan
+    ping_interval_seconds=settings.websocket_ping_interval,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SLKhurram-Coding\GemWebUi-API\venv\Lib\site-packages\pydantic\main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Settings' object has no attribute 'websocket_ping_interval'
+2025-07-08 17:14:43,291 - src.core.session_manager - INFO - Session cleanup loop stopped

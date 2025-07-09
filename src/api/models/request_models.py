@@ -95,6 +95,8 @@ class BrowserConfigRequest(BaseModel):
     user_data_dir: Optional[str] = Field(None, max_length=500, description="Browser user data directory")
     binary_path: Optional[str] = Field(None, max_length=500, description="Custom browser binary path")
     extra_args: Optional[List[str]] = Field(None, description="Additional browser arguments")
+    class Config:
+        extra = 'allow'
 
 
 class DeepResearchRequest(BaseModel):

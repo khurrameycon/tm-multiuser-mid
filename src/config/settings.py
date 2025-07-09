@@ -6,7 +6,9 @@ from dataclasses import dataclass, field
 from enum import Enum
 import json
 import yaml
-from pydantic import BaseSettings, Field, validator
+from pydantic_settings import BaseSettings
+from pydantic import Field, validator # Keep these if they are still used
+from typing import List
 
 logger = logging.getLogger(__name__)
 
@@ -221,11 +223,29 @@ class Settings(BaseSettings):
     
     # External service configurations
     llm_providers: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    cors_origins: List[str] = ["*"]
+    enable_rate_limiting: bool = True
+    api_rate_limit_per_minute: int = 100
+    api_rate_limit_burst: int = 20 
+    max_sessions: int = 10
+    session_timeout_minutes: int = 60
+    max_sessions_per_ip: int = 2
+    cleanup_interval_seconds: int = 300
+    max_browser_instances: int = 5
+    min_browser_instances: int = 1
+    browser_idle_timeout_minutes: int = 30
+    max_memory_usage_mb: int = 4096
+    enable_resource_pooling: bool = True
+    enable_memory_monitoring: bool = True
+    enable_automatic_scaling: bool = True
+    max_websocket_connections: int = 100
+    max_websocket_connections_per_ip: int = 5
     
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
         case_sensitive = False
+        extra = 'allow'
         
     @validator("environment", pre=True)
     def validate_environment(cls, v):

@@ -48,10 +48,11 @@ from src.config.settings import Settings, get_settings
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('./tmp/logs/app.log')
+        # Add encoding to both handlers
+        logging.StreamHandler(sys.stdout), 
+        logging.FileHandler('./tmp/logs/app.log', encoding='utf-8')
     ]
 )
 logger = logging.getLogger(__name__)
