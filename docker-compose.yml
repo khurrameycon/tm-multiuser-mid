@@ -1,62 +1,126 @@
+version: '3.8'
+
 services:
-  browser-use-webui:
-    platform: linux/amd64
+  # Main application
+  browser-automation:
     build:
       context: .
-      dockerfile: ${DOCKERFILE:-Dockerfile}
-      args:
-        TARGETPLATFORM: ${TARGETPLATFORM:-linux/amd64}
+      dockerfile: Dockerfile
     ports:
-      - "7788:7788"  # Gradio default port
-      - "6080:6080"  # noVNC web interface
-      - "5901:5901"  # VNC port
-      - "9222:9222"  # Chrome remote debugging port
+      - "8000:8000"
     environment:
-      - OPENAI_ENDPOINT=${OPENAI_ENDPOINT:-https://api.openai.com/v1}
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
-      - ANTHROPIC_ENDPOINT=${ANTHROPIC_ENDPOINT:-https://api.anthropic.com}
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
-      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}
-      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
-      - DEEPSEEK_ENDPOINT=${DEEPSEEK_ENDPOINT:-https://api.deepseek.com}
-      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
-      - OLLAMA_ENDPOINT=${OLLAMA_ENDPOINT:-http://localhost:11434}
-      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
-      - MISTRAL_ENDPOINT=${MISTRAL_ENDPOINT:-https://api.mistral.ai/v1}
-      - ALIBABA_ENDPOINT=${ALIBABA_ENDPOINT:-https://dashscope.aliyuncs.com/compatible-mode/v1}
-      - ALIBABA_API_KEY=${ALIBABA_API_KEY:-}
-      - MOONSHOT_ENDPOINT=${MOONSHOT_ENDPOINT:-https://api.moonshot.cn/v1}
-      - MOONSHOT_API_KEY=${MOONSHOT_API_KEY:-}
-      - IBM_API_KEY=${IBM_API_KEY:-}
-      - IBM_ENDPOINT=${IBM_ENDPOINT:-https://us-south.ml.cloud.ibm.com}
-      - IBM_PROJECT_ID=${IBM_PROJECT_ID:-}
-      - BROWSER_USE_LOGGING_LEVEL=${BROWSER_USE_LOGGING_LEVEL:-info}
-      - ANONYMIZED_TELEMETRY=${ANONYMIZED_TELEMETRY:-false}
-      - CHROME_PATH=/usr/bin/google-chrome
-      - CHROME_USER_DATA=/app/data/chrome_data
-      - CHROME_PERSISTENT_SESSION=${CHROME_PERSISTENT_SESSION:-false}
-      - CHROME_CDP=${CHROME_CDP:-http://localhost:9222}
-      - DISPLAY=:99
-      - PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
-      - RESOLUTION=${RESOLUTION:-1920x1080x24}
-      - RESOLUTION_WIDTH=${RESOLUTION_WIDTH:-1920}
-      - RESOLUTION_HEIGHT=${RESOLUTION_HEIGHT:-1080}
-      - VNC_PASSWORD=${VNC_PASSWORD:-vncpassword}
-      - CHROME_DEBUGGING_PORT=9222
-      - CHROME_DEBUGGING_HOST=localhost
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - HOST=0.0.0.0
+      - PORT=8000
+      - LOG_LEVEL=INFO
+      # Browser settings optimized for Docker
+      - BROWSER_HEADLESS=true
+      - BROWSER_DISABLE_SECURITY=true
+      - PLAYWRIGHT_BROWSERS_PATH=/app/.cache/ms-playwright
+      # Resource limits
+      - MAX_SESSIONS=20
+      - MAX_BROWSER_INSTANCES=5
+      - MAX_MEMORY_USAGE_MB=2048
+      - SESSION_TIMEOUT_MINUTES=30
+      # Security
+      - CORS_ORIGINS=*
+      - ENABLE_RATE_LIMITING=true
+      - API_RATE_LIMIT_PER_MINUTE=100
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+      # Persist data
+      - ./tmp:/app/tmp
+      # Playwright cache
+      - playwright_cache:/app/.cache/ms-playwright
     restart: unless-stopped
-    shm_size: '2gb'
-    cap_add:
-      - SYS_ADMIN
-    security_opt:
-      - seccomp=unconfined
-    tmpfs:
-      - /tmp
+    depends_on:
+      - redis
     healthcheck:
-      test: ["CMD", "nc", "-z", "localhost", "5901"]
-      interval: 10s
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+          cpus: '2'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+    networks:
+      - app-network
+
+  # Redis for session storage and caching
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
       timeout: 5s
       retries: 3
+    networks:
+      - app-network
+
+  # Optional: Monitoring with Prometheus (uncomment if needed)
+  # prometheus:
+  #   image: prom/prometheus:latest
+  #   ports:
+  #     - "9090:9090"
+  #   volumes:
+  #     - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+  #     - prometheus_data:/prometheus
+  #   command:
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #     - '--storage.tsdb.path=/prometheus'
+  #     - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+  #     - '--web.console.templates=/usr/share/prometheus/consoles'
+  #     - '--web.enable-lifecycle'
+  #   networks:
+  #     - app-network
+
+  # Optional: Grafana for dashboards (uncomment if needed)
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - GF_SECURITY_ADMIN_PASSWORD=admin
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #   depends_on:
+  #     - prometheus
+  #   networks:
+  #     - app-network
+
+  # Web UI (your existing webui.py)
+  webui:
+    build:
+      context: .
+      dockerfile: Dockerfile.webui
+    ports:
+      - "7788:7788"
+    environment:
+      - BACKEND_API_URL=http://browser-automation:8000
+    depends_on:
+      - browser-automation
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  redis_data:
+  playwright_cache:
+  # prometheus_data:
+  # grafana_data:
+
+networks:
+  app-network:
+    driver: bridge

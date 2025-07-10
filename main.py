@@ -23,19 +23,79 @@ from src.api.middleware.rate_limiting import RateLimitMiddleware
 from src.api.middleware.logging import LoggingMiddleware
 from src.config.settings import get_settings
 
-# This platform-specific fix MUST be the first piece of code to run.
-if platform.system() == "Windows":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+# Docker/Linux optimization - no need for Windows event loop policy
+def setup_event_loop_policy():
+    """
+    Setup event loop policy optimized for Docker/Linux deployment.
+    This eliminates Windows-specific asyncio issues.
+    """
+    if platform.system() == "Windows":
+        # For local Windows development, use ProactorEventLoopPolicy
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+        logger.info("✅ Windows ProactorEventLoopPolicy set for local development")
+    else:
+        # Linux/Docker - use default policy (perfect for containers)
+        logger.info(f"✅ Using default event loop policy for {platform.system()}")
+    
+    # Verify subprocess support
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        async def test_subprocess():
+            try:
+                proc = await asyncio.create_subprocess_exec(
+                    sys.executable, "-c", "print('OK')",
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE
+                )
+                await proc.communicate()
+                return proc.returncode == 0
+            except Exception:
+                return False
+        
+        result = loop.run_until_complete(test_subprocess())
+        loop.close()
+        
+        if result:
+            logger.info("✅ Subprocess support verified - Playwright will work")
+        else:
+            logger.error("❌ Subprocess support failed - Playwright may not work")
+            
+    except Exception as e:
+        logger.error(f"❌ Error testing subprocess support: {e}")
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('./tmp/logs/app.log', encoding='utf-8')
-    ]
-)
+# Setup event loop policy first
+setup_event_loop_policy()
+
+# Configure logging with Docker-friendly format
+def setup_logging():
+    """Setup logging optimized for Docker containers"""
+    log_level = os.getenv("LOG_LEVEL", "INFO")
+    
+    # Docker-friendly logging format
+    log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    
+    # Setup handlers
+    handlers = [logging.StreamHandler(sys.stdout)]
+    
+    # Add file handler if not in container
+    if not os.getenv("DOCKER_CONTAINER"):
+        os.makedirs('./tmp/logs', exist_ok=True)
+        handlers.append(logging.FileHandler('./tmp/logs/app.log', encoding='utf-8'))
+    
+    logging.basicConfig(
+        level=getattr(logging, log_level.upper()),
+        format=log_format,
+        handlers=handlers
+    )
+    
+    # Reduce noise from third-party libraries
+    logging.getLogger("asyncio").setLevel(logging.WARNING)
+    logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
+    logging.getLogger("playwright").setLevel(logging.WARNING)
+
+setup_logging()
 logger = logging.getLogger(__name__)
 
 # Global state
@@ -45,15 +105,29 @@ app_state: Dict[str, Any] = {}
 async def lifespan(app: FastAPI):
     # Startup
     logger.info("🚀 Starting Multi-User Browser Automation Application")
+    
+    # Create necessary directories
+    directories = [
+        './tmp/logs', './tmp/sessions', './tmp/downloads', 
+        './tmp/recordings', './tmp/traces'
+    ]
+    for directory in directories:
+        os.makedirs(directory, exist_ok=True)
+    
     settings = get_settings()
-
-    for path in ['./tmp/logs', './tmp/sessions', './tmp/downloads', './tmp/recordings', './tmp/traces']:
-        os.makedirs(path, exist_ok=True)
-
+    logger.info(f"Environment: {settings.environment}")
+    logger.info(f"Platform: {platform.system()}")
+    
+    # Check if running in Docker
+    if os.path.exists('/.dockerenv'):
+        logger.info("🐳 Running in Docker container")
+        # Docker-specific optimizations
+        os.environ.setdefault("DISPLAY", ":99")
+        os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", "/app/.cache/ms-playwright")
+    
     logger.info("Initializing core infrastructure...")
 
-    # --- THE FIX IS HERE ---
-    # Reverted to direct attribute access for configuration. This is the correct way.
+    # Session manager configuration
     session_config = SessionConfig(
         max_sessions=settings.session_manager.max_sessions,
         session_timeout_minutes=settings.session_manager.session_timeout_minutes,
@@ -63,6 +137,7 @@ async def lifespan(app: FastAPI):
     await init_session_manager(session_config)
     logger.info("✅ Session Manager initialized")
 
+    # Resource pool configuration
     resource_config = ResourceConfig(
         max_browser_instances=settings.resource_pool.max_browser_instances,
         min_browser_instances=settings.resource_pool.min_browser_instances,
@@ -81,6 +156,7 @@ async def lifespan(app: FastAPI):
     await init_resource_pool(resource_config)
     logger.info("✅ Resource Pool initialized")
 
+    # WebSocket configuration
     websocket_config = WebSocketConfig(
         max_connections=settings.websocket.max_connections,
         max_connections_per_ip=settings.websocket.max_connections_per_ip,
@@ -110,6 +186,7 @@ async def lifespan(app: FastAPI):
 
 def create_app() -> FastAPI:
     settings = get_settings()
+    
     app = FastAPI(
         title="Multi-User Browser Automation API",
         version="2.0.0",
@@ -128,6 +205,7 @@ def create_app() -> FastAPI:
     )
     app.add_middleware(GZipMiddleware, minimum_size=1000)
     app.add_middleware(LoggingMiddleware)
+    
     if settings.security.enable_rate_limiting:
         app.add_middleware(
             RateLimitMiddleware,
@@ -144,12 +222,35 @@ def create_app() -> FastAPI:
 
 app = create_app()
 
+# Docker health check endpoint
+@app.get("/health")
+async def health_check():
+    """Simple health check for Docker containers"""
+    return {
+        "status": "healthy",
+        "platform": platform.system(),
+        "docker": os.path.exists('/.dockerenv')
+    }
+
 if __name__ == "__main__":
     settings = get_settings()
-    uvicorn.run(
-        "main:app",
-        host=settings.host,
-        port=settings.port,
-        reload=settings.debug,
-        log_level="info"
-    )
+    
+    # Docker-optimized uvicorn configuration
+    uvicorn_config = {
+        "host": "0.0.0.0",  # Important for Docker
+        "port": settings.port,
+        "log_level": "info",
+        "access_log": True,
+        "reload": False,  # Never use reload in production/Docker
+    }
+    
+    # Additional Docker optimizations
+    if os.path.exists('/.dockerenv'):
+        uvicorn_config.update({
+            "workers": 1,  # Single worker for Docker
+            "loop": "asyncio",
+            "lifespan": "on",
+        })
+    
+    logger.info(f"Starting server on {uvicorn_config['host']}:{uvicorn_config['port']}")
+    uvicorn.run("main:app", **uvicorn_config)

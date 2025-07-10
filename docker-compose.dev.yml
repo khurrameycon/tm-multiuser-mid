@@ -1,0 +1,57 @@
+version: '3.8'
+
+# Development overrides for docker-compose.yml
+services:
+  browser-automation:
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+      # Development settings
+      - MAX_SESSIONS=5
+      - MAX_BROWSER_INSTANCES=2
+      - SESSION_TIMEOUT_MINUTES=60
+      # Enable more detailed logging
+      - BROWSER_HEADLESS=false  # Set to true if you want headless in dev
+    volumes:
+      # Mount source code for development (enable if you want hot reload)
+      # - .:/app
+      - ./tmp:/app/tmp
+      - ./logs:/app/logs
+    # Override resource limits for development
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1'
+        reservations:
+          memory: 512M
+          cpus: '0.25'
+    # Enable port for debugging
+    ports:
+      - "8000:8000"
+      - "5678:5678"  # For debugger if needed
+
+  webui:
+    environment:
+      - BACKEND_API_URL=http://browser-automation:8000
+      - DEBUG=true
+    volumes:
+      # Mount source for development
+      - ./webui.py:/app/webui.py
+      - ./static:/app/static
+
+  # Add development database for testing
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=browser_automation
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_dev_data:
