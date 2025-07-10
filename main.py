@@ -12,16 +12,36 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
-# Core infrastructure
-from src.core.session_manager import init_session_manager, shutdown_session_manager, SessionConfig
-from src.core.resource_pool import init_resource_pool, shutdown_resource_pool, ResourceConfig
-from src.core.websocket_manager import init_websocket_manager, shutdown_websocket_manager, WebSocketConfig
-from src.api.routes.agent import agent_router
-from src.api.routes.websocket import websocket_router
-from src.api.routes.monitoring import monitoring_router
-from src.api.middleware.rate_limiting import RateLimitMiddleware
-from src.api.middleware.logging import LoggingMiddleware
-from src.config.settings import get_settings
+# Configure logging FIRST - before any other imports that might use logger
+def setup_logging():
+    """Setup logging optimized for Docker containers"""
+    log_level = os.getenv("LOG_LEVEL", "INFO")
+    
+    # Docker-friendly logging format
+    log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    
+    # Setup handlers
+    handlers = [logging.StreamHandler(sys.stdout)]
+    
+    # Add file handler if not in container
+    if not os.getenv("DOCKER_CONTAINER"):
+        os.makedirs('./tmp/logs', exist_ok=True)
+        handlers.append(logging.FileHandler('./tmp/logs/app.log', encoding='utf-8'))
+    
+    logging.basicConfig(
+        level=getattr(logging, log_level.upper()),
+        format=log_format,
+        handlers=handlers
+    )
+    
+    # Reduce noise from third-party libraries
+    logging.getLogger("asyncio").setLevel(logging.WARNING)
+    logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
+    logging.getLogger("playwright").setLevel(logging.WARNING)
+
+# Setup logging immediately
+setup_logging()
+logger = logging.getLogger(__name__)
 
 # Docker/Linux optimization - no need for Windows event loop policy
 def setup_event_loop_policy():
@@ -68,35 +88,16 @@ def setup_event_loop_policy():
 # Setup event loop policy first
 setup_event_loop_policy()
 
-# Configure logging with Docker-friendly format
-def setup_logging():
-    """Setup logging optimized for Docker containers"""
-    log_level = os.getenv("LOG_LEVEL", "INFO")
-    
-    # Docker-friendly logging format
-    log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    
-    # Setup handlers
-    handlers = [logging.StreamHandler(sys.stdout)]
-    
-    # Add file handler if not in container
-    if not os.getenv("DOCKER_CONTAINER"):
-        os.makedirs('./tmp/logs', exist_ok=True)
-        handlers.append(logging.FileHandler('./tmp/logs/app.log', encoding='utf-8'))
-    
-    logging.basicConfig(
-        level=getattr(logging, log_level.upper()),
-        format=log_format,
-        handlers=handlers
-    )
-    
-    # Reduce noise from third-party libraries
-    logging.getLogger("asyncio").setLevel(logging.WARNING)
-    logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
-    logging.getLogger("playwright").setLevel(logging.WARNING)
-
-setup_logging()
-logger = logging.getLogger(__name__)
+# Now import the core infrastructure modules
+from src.core.session_manager import init_session_manager, shutdown_session_manager, SessionConfig
+from src.core.resource_pool import init_resource_pool, shutdown_resource_pool, ResourceConfig
+from src.core.websocket_manager import init_websocket_manager, shutdown_websocket_manager, WebSocketConfig
+from src.api.routes.agent import agent_router
+from src.api.routes.websocket import websocket_router
+from src.api.routes.monitoring import monitoring_router
+from src.api.middleware.rate_limiting import RateLimitMiddleware
+from src.api.middleware.logging import LoggingMiddleware
+from src.config.settings import get_settings
 
 # Global state
 app_state: Dict[str, Any] = {}

@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # --- Configuration ---
-BACKEND_API_URL = "http://127.0.0.1:8000"
+BACKEND_API_URL = "http://0.0.0.0:8000"
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -156,8 +156,8 @@ async def websocket_endpoint(websocket: WebSocket):
 
 # --- Main Execution ---
 def main():
-    logger.info("Starting Web UI server on http://127.0.0.1:7788")
-    uvicorn.run(app, host="127.0.0.1", port=7788, log_level="info")
+    logger.info("Starting Web UI server on http://0.0.0.0:7788")
+    uvicorn.run(app, host="0.0.0.0", port=7788, log_level="info")
 
 if __name__ == '__main__':
     main()
